@@ -1,14 +1,14 @@
 module IGeTui
   class NotyPopLoadTemplate < BaseTemplate
-    STRING_ATTRIBUTES = %i(
+    STRING_ATTRIBUTES = %w(
       title text logo logo_url
       pop_title pop_text pop_image
       pop_button_1 pop_button_2
       load_icon load_title load_url
       android_mask symbia_mask ios_mask
-    ).freeze
-    BOOLEAN_ATTRIBUTES_OF_TRUE = %i(is_ring is_vibrate is_clearable).freeze
-    BOOLEAN_ATTRIBUTES_OF_FALSE = %i(is_auto_install is_active).freeze
+    ).map(&:to_sym).freeze
+    BOOLEAN_ATTRIBUTES_OF_TRUE = %w(is_ring is_vibrate is_clearable).map(&:to_sym).freeze
+    BOOLEAN_ATTRIBUTES_OF_FALSE = %w(is_auto_install is_active).map(&:to_sym).freeze
 
     attr_accessor *STRING_ATTRIBUTES, *BOOLEAN_ATTRIBUTES_OF_TRUE, *BOOLEAN_ATTRIBUTES_OF_FALSE
 
