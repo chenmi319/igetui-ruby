@@ -51,6 +51,8 @@ module IGeTui
       @push_info.locKey = options[:loc_key]
       @push_info.locArgs = options[:loc_args]
       @push_info.launchImage = options[:launch_image]
+      @push_info.contentAvailable = options[:content_available]
+      @push_info.category = options[:category]
       # validate method need refactoring.
       # Validate.new.validate(args)
     end
